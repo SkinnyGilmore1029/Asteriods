@@ -1,5 +1,6 @@
 import pygame
 from constants import *
+from player import *
 pygame.init()
 
 screen = pygame.display.set_mode((SCREEN_WIDTH,SCREEN_HEIGHT))
@@ -17,11 +18,11 @@ def main():
                 return
                 
         screen.fill("black")
+        player = Player(SCREEN_WIDTH/2,SCREEN_HEIGHT/2)
+        player.draw(screen)
         
         clock.tick(60)/1000
         pygame.display.flip()
-
-
 
 if __name__ == '__main__':
     main()
