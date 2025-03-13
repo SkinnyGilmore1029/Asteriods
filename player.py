@@ -1,4 +1,5 @@
-from circleshape import*
+import pygame
+from circleshape import CircleShape
 from constants import*
 
 
@@ -30,13 +31,10 @@ class Player(CircleShape):
         keys = pygame.key.get_pressed()
 
         if keys[pygame.K_a]:
-            self.rotate(dt)
-            
+            self.rotate(dt)       
         if keys[pygame.K_d]:
-            self.rotate(-dt)
-            
+            self.rotate(-dt)    
         if keys[pygame.K_w]:
-            self.move(dt,1)
-            
+            self.move(dt,1)    
         if keys[pygame.K_s]:
             self.move(dt,-1)
