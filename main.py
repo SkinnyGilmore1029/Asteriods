@@ -33,10 +33,16 @@ def main():
                 return
         
         updatable.update(dt)
+        #checking to see if the asteroids are hitting the player
         for obj in the_asteroids:
             if obj.check_collisions(player):
                 print("Game over!")
                 exit()
+            #checking to see if the bullets hit the asteriod    
+            for shot in bullets:
+                if obj.check_collisions(shot):
+                    obj.split()
+                    shot.kill()
         screen.fill("black")
         
         for d in drawable:
